@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--angular template driven  form to input jpeg images -->
+    <form #formRef="ngForm" (ngSubmit)="onsubmit(formRef)">
+        <input type="file" name="image" accept="image/*" (change)="onselect($event)" ngModel>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="display_image">
+        <img *ngIf="view" height="445" width="590" [src]="view" alt="image">
+    </div>
+    
+
+
+</body>
+</html>
