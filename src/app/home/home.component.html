@@ -9,14 +9,16 @@
 <body>
     <!--angular template driven  form to input jpeg images -->
     <form #formRef="ngForm" (ngSubmit)="onsubmit(formRef)">
-        <input type="file" name="image" accept="image/*" (change)="onselect($event)" ngModel>
+        <input type="file" name="image" accept="image/jpeg,image/jpg" (change)="onselect($event)" ngModel>
         <button type="submit">Submit</button>
     </form>
     <div id="display_image">
-        <img *ngIf="view" height="445" width="590" [src]="view" alt="image">
+        <img *ngIf="view" height="400" width="540" [src]="view" alt="image">
     </div>
     
 
-<div *ngIf="result">{{result}}</div>
+    <div *ngIf="result">
+        <a class="btn btn-primary" href="https://www.google.com/search?q={{result}}" target="_blank">{{ result }}</a>
+      </div>
 </body>
 </html>

@@ -8,6 +8,7 @@ import { ClassifierService } from '../services/classifier.service';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent {
 
     constructor(private classifierService: ClassifierService) { }
@@ -18,6 +19,7 @@ export class HomeComponent {
         this.classifierService.classify(this.image).subscribe((response: any) => {
             // Handle the response from the Lambda function
             console.log(response);
+            this.result = response;
         });
     }
 
@@ -31,4 +33,5 @@ export class HomeComponent {
 
 
     }
+    
 }
